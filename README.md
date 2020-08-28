@@ -1,12 +1,16 @@
-# PAINT.OK | Applications for joint drawing (WebRTC, Socket.io)
+# PAINT.OK | Applications for joint drawing
 
-### <span style="color:red">Do not use! The app is under development</span>
+## Do not use! The app is under development
 
-PAINT.OK - Example of an app for drawing and communicating together
+PAINT.OK - Example of an app for drawing and communicating together  
+The project uses technologies - [WebRTC], [Socket.io]
 
 [WebRTC] technology allows you to establish formal and secure connections between clients,
 but everything is possible in our world :). I am not responsible for your use of this project.
 You are acting at your own risk.
+
+[Socket.io] is a library that enables real-time, bidirectional and event-based
+communication between the browser and the server.
 
 ### Demo
 
@@ -65,4 +69,5 @@ The project is originally based on a repository [coding-with-chaim]. Thank you C
 [mit licensed]: https://github.com/GrafSoul/webrtc-paint-chat.git/blob/master/LICENSE
 [heroku]: https://www.heroku.com/
 [webrtc]: https://webrtc.github.io/samples/
+[socket.io]: https://socket.io/
 [coding-with-chaim]: https://github.com/coding-with-chaim/react-video-chat
