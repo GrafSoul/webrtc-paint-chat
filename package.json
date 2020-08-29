@@ -1,0 +1,21 @@
+{
+    "name": "webrtc-paint-chat",
+    "version": "0.1.5",
+    "description": "PAINT.OK - Example of an app for drawing and communicating together.",
+    "main": "./server/index.js",
+    "repository": "https://github.com/GrafSoul/webrtc-paint-chat.git",
+    "author": "GrafSoul <grafsoul@gmail.com>",
+    "license": "MIT",
+    "private": true,
+    "scripts": {
+        "dev": "node ./server/index.js",
+        "start": "PROD=true node ./server/index.js",
+        "postinstall": "cd ./client && yarn",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "dependencies": {
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "socket.io": "^2.3.0"
+    }
+}

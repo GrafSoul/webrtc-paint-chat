@@ -64,7 +64,7 @@ The project is originally based on a repository [coding-with-chaim]. Thank you C
 © 2020 | PAINT.OK | Applications for joint drawing (WebRTC, Socket.io) [MIT licensed].
 
 [nodejs]: https://nodejs.org/
-[vid.ok]: https://paintok.herokuapp.com/
+[paint.ok]: https://paintok.herokuapp.com/
 [yarn]: https://yarnpkg.com/
 [mit licensed]: https://github.com/GrafSoul/webrtc-paint-chat.git/blob/master/LICENSE
 [heroku]: https://www.heroku.com/
