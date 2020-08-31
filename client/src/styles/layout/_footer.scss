@@ -1,0 +1,21 @@
+.footer {
+    padding: 5px 10px;
+    background-color: $color-primary-dark;
+    opacity: .7;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+
+    p {
+        font-family: Arial, Helvetica, sans-serif;
+        color: $color-grey-light-2;
+        font-size: .7em;
+        text-align: center;
+    }
+
+    a {
+        color: $color-grey-light-2;
+    }
+}

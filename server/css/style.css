@@ -12,13 +12,13 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #3b002f;
+    background-color: #1d1d1d;
 }
 
 .splash {
     text-align: center;
     padding: 30px 45px;
-    border: 1px solid #a50184;
+    border: 1px solid #6d6d6d;
     border-radius: 10px;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
 }

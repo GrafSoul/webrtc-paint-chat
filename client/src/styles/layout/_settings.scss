@@ -1,0 +1,111 @@
+.settings {
+    h2 {
+        margin-bottom: 20px;
+        color: $color-white;
+        font-size: 1.4em;
+    }
+
+    h3 {
+        margin-bottom: 30px;
+        color: #ffbb00;
+        font-size: 1em;
+        line-height: 1.2em;
+    }
+
+    .invisible {
+        height: 0;
+        visibility: hidden;
+    }
+
+    .video-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 300px;
+        margin-bottom: 20px;
+        overflow: hidden;
+    }
+
+    video {
+        width: 100%;
+        max-height: 300px;
+        max-width: 400px;
+        border: 3px solid $color-primary-light;
+    }
+
+    label {
+        display: block;
+        font-size: 1.1em;
+        line-height: 1.2em;
+        color: $color-white;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .audio-indicator {
+        width: 100%;
+        height: 10px;
+        max-width: 400px;
+        margin-bottom: 5px;
+        border-radius: 6px;
+        border: 2px solid $color-primary-light;
+    }
+
+    .select {
+        max-width: 400px;
+        width: 100%;
+        margin: 0 auto 15px;
+
+        select {
+            width: 100%;
+            padding: 7px;
+            margin: 0;
+            font-size: 1.1em;
+            border-radius: 4px;
+            background: #f8f8f8;
+            color: $color-primary;
+            border: none;
+            outline: none;
+            display: block;
+            cursor: pointer;
+        }
+    }
+
+    .info {
+        margin-bottom: 20px;
+        color: $color-white;
+        font-size: 1.2em;
+        line-height: 1.2em;
+    }
+
+    .btn-go {
+        margin-bottom: 10px;
+    }
+}
+
+.small-meter {
+    margin: 0;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: absolute;
+    right: 20px;
+    top: 48px;
+    z-index: 250;
+}
+
+.line-small-meter {
+    margin: 1px;
+    border-radius: 20px;
+    color: #626262
+}
+
+@media only screen and (max-width: 600px) {
+    .small-meter {
+        right: 14px;
+        top: 140px;
+    }
+}

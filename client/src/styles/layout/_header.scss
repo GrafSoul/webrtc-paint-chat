@@ -1,0 +1,31 @@
+.header {
+    background-color: $color-primary-dark;
+    opacity: 0.8;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+
+    .header-wrap {
+        padding: 5px 10px 10px;
+    }
+
+    .logo {
+        padding: 0;
+        margin: 0 5px -9px 0;
+        width: 29px;
+        display: inline-block;
+
+        img {
+            fill: $color-white;
+        }
+    }
+
+    h1 {
+        font-family: "Oswald", sans-serif;
+        color: $color-white;
+        font-size: 1.2em;
+        text-align: center;
+    }
+}

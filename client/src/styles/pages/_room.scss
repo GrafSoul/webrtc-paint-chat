@@ -1,0 +1,205 @@
+.video {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    video {
+        width: 100vw;
+        height: 100vh;
+
+        &.active {
+            object-fit: cover;
+        }
+
+        &.mirror {
+            transform: rotateY(180deg);
+        }
+    }
+
+    .user-video {
+        position: absolute;
+        top: 55px;
+        right: 20px;
+
+        video {
+            width: 170px;
+            height: 130px;
+            border: 3px solid $color-primary-light;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .video {
+        .user-video {
+            transform: scale(0.7) translate(45px, -33px);
+
+            video {
+                border: 2px solid $color-primary-light;
+            }
+        }
+    }
+}
+
+.stream-control {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0 75px 35px;
+
+    .btn {
+        width: 50px;
+        height: 50px;
+        padding: 0;
+        margin: 0;
+        text-align: left;
+        display: inline-block;
+        border: none;
+        outline: none;
+        background-color: rgba(66, 66, 66, 0.5);
+        border-radius: 50%;
+        cursor: pointer;
+        transition: 0.3s all ease;
+
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+
+    .icon {
+        width: 50px;
+        height: 50px;
+        padding: 0;
+        margin: 0;
+        display: block;
+        background: url("../../images/sprite_icons.png") no-repeat 0 0;
+
+        &.icon-link {
+            background-position: -100px -100px;
+        }
+
+        &.icon-settings {
+            background-position: 0 0;
+        }
+
+        &.icon-mic.off {
+            background-position: -100px 0;
+        }
+
+        &.icon-mic {
+            background-position: -50px 0;
+        }
+
+        &.icon-camera {
+            background-position: -150px 0;
+        }
+
+        &.icon-camera.off {
+            background-position: -200px 0;
+        }
+
+        &.icon-sound {
+            background-position: -100px -50px;
+        }
+
+        &.icon-sound.off {
+            background-position: -150px -50px;
+        }
+
+        &.icon-fullscreen {
+            background-position: 0 -100px;
+        }
+
+        &.icon-fullscreen.off {
+            background-position: 0 -50px;
+        }
+
+        &.icon-monitor {
+            background-position: -200px -100px;
+        }
+
+        &.icon-monitor.off {
+            background-position: -200px -50px;
+        }
+
+        &.icon-mirror {
+            background-position: -50px -150px;
+        }
+
+        &.icon-mirror.off {
+            background-position: 0 -150px;
+        }
+
+        &.icon-share {
+            background-position: -50px -50px;
+        }
+
+        &.icon-chat {
+            background-position: -99px -147px;
+        }
+    }
+
+    .btn-link {
+        position: absolute;
+        left: 15px;
+        bottom: 35px;
+    }
+
+    .btn-chat {
+        position: absolute;
+        right: 15px;
+        bottom: 35px;
+    }
+
+    .btn-group {
+        text-align: center;
+
+        .btn {
+            margin: 0 5px;
+        }
+    }
+}
+
+.btn-exit-wrap {
+    position: absolute;
+    top: 55px;
+    left: 15px;
+    width: 50px;
+    height: 50px;
+    z-index: 110;
+
+    .btn-exit {
+        width: 50px;
+        height: 50px;
+        padding: 0;
+        margin: 0;
+        text-align: left;
+        display: inline-block;
+        border: none;
+        outline: none;
+        background-color: rgba(61, 61, 61, 0.5);
+        border-radius: 50%;
+        cursor: pointer;
+        transition: 0.3s all ease;
+
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+
+    .icon {
+        width: 50px;
+        height: 50px;
+        padding: 0;
+        margin: 0;
+        display: block;
+        background: url("../../images/sprite_icons.png") no-repeat 0 0;
+
+        &.icon-exit {
+            background-position: -50px -100px;
+        }
+    }
+}

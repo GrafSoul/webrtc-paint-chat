@@ -1,0 +1,13 @@
+html {
+    background-color: $color-primary;
+    overflow-y: auto;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    position: relative;
+    overflow: hidden;
+    min-width: 320px;
+}

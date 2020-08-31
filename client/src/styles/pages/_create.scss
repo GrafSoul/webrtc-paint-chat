@@ -1,0 +1,105 @@
+.container {
+    max-width: 800px;
+    padding: 50px 0 0;
+    margin: auto;
+
+    .create-chat {
+        margin: 15px;
+        text-align: center;
+        padding: 30px 45px;
+        border: 1px solid $color-primary-light-color;
+        border-radius: 10px;
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .crete-info {
+        color: #bebebe;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: normal;
+        margin-bottom: 20px;
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            margin-bottom: 30px;
+        }
+    }
+
+    .link-url {
+        position: relative;
+        display: block;
+        padding: 10px 47px 10px 20px;
+        margin-bottom: 30px;
+        color: $color-white;
+        font-size: 1.2em;
+        border: 1px solid $color-primary-light-color;
+        background-color: $color-primary-light;
+        border-radius: 6px;
+        word-wrap: break-word;
+    }
+
+    .copy {
+        width: 33px;
+        height: 33px;
+        position: absolute;
+        top: 7px;
+        right: 7px;
+        border: 1px solid $color-primary-light-color;
+        background-color: $color-primary-light;
+        border-radius: 6px;
+        cursor: pointer;
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+        transition: all 0.3s ease;
+
+        img {
+            width: 30px;
+            height: 30px;
+            padding: 3px;
+            display: block;
+        }
+
+        &:hover {
+            background-color: #424242;
+            box-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
+        }
+
+        .copied {
+            display: inline-block;
+            font-size: 0.8em;
+            padding: 1px 7px 3px;
+            color: rgb(53, 100, 139);
+            background-color: $color-grey-light-1;
+            border-radius: 6px;
+            position: absolute;
+            top: -40px;
+            right: -16px;
+        }
+    }
+
+    .qrcode {
+        margin-bottom: 30px;
+    }
+
+    .btn-go {
+        button {
+            padding: 5px 20px 7px;
+            font-size: 1.5em;
+            font-weight: 500;
+            color: $color-white;
+            outline: none;
+            background-color: rgb(54, 148, 0);
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+            transition: 0.3s all ease;
+
+            &:hover {
+                background-color: rgb(71, 194, 0);
+                box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+            }
+        }
+    }
+}
