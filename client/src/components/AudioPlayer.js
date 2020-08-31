@@ -10,7 +10,7 @@ import ExitButton from './ExitButton';
 import Loader from './Loader';
 import AudioMeter from './AudioMeter';
 
-const PaintPlayer = ({ id, history, constraints }) => {
+const AudioPlayer = ({ id, history, constraints }) => {
     const [audio, setAudio] = useState(true);
     const [sound, setSound] = useState(false);
     const [isCopied, setIsCopied] = useState(false);
@@ -24,8 +24,7 @@ const PaintPlayer = ({ id, history, constraints }) => {
     const [messages, setMessages] = useState([]);
     const [message, setMessage] = useState('');
 
-    const userVideo = useRef();
-    const partnerVideo = useRef();
+    const partnerAudio = useRef();
 
     const peerRef = useRef();
     const socketRef = useRef();
@@ -101,7 +100,6 @@ const PaintPlayer = ({ id, history, constraints }) => {
         }
 
         navigator.mediaDevices.getUserMedia(constraints).then((stream) => {
-            userVideo.current.srcObject = stream;
             userStream.current = stream;
 
             socketRef.current = io.connect('/');
@@ -195,7 +193,7 @@ const PaintPlayer = ({ id, history, constraints }) => {
     }
 
     function handleTrackEvent(e) {
-        partnerVideo.current.srcObject = e.streams[0];
+        partnerAudio.current.srcObject = e.streams[0];
     }
 
     function handleShareMonitor() {
@@ -278,10 +276,13 @@ const PaintPlayer = ({ id, history, constraints }) => {
                 model="small"
             />
 
-            <div className="video">
-                <div className="user-video">
-                    <audio autoPlay muted ref={userVideo}></audio>
-                </div>
+            <div className="partner-audio">
+                <audio
+                    id="partner"
+                    autoPlay
+                    muted={sound}
+                    ref={partnerAudio}
+                ></audio>
             </div>
 
             <StreamControl
@@ -324,4 +325,4 @@ const PaintPlayer = ({ id, history, constraints }) => {
     );
 };
 
-export default PaintPlayer;
+export default AudioPlayer;

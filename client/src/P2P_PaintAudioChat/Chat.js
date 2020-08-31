@@ -6,7 +6,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ExitButton from '../components/ExitButton';
 import Loader from '../components/Loader';
-import PaintPlayer from '../components/PaintPlayer';
+import AudioPlayer from '../components/AudioPlayer';
 import Settings from '../components/Settings';
 
 const Chat = ({ match, history }) => {
@@ -38,7 +38,7 @@ const Chat = ({ match, history }) => {
             {!open && <Settings startChat={startChat} />}
 
             {open && (
-                <PaintPlayer
+                <AudioPlayer
                     id={id}
                     history={history}
                     constraints={constraints}

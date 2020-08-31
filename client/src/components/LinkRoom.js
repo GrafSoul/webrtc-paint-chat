@@ -30,7 +30,7 @@ const LinkRoom = ({
 
             <div className="link-copy">
                 <button onClick={() => handleCopyLink(url)}>Copy link</button>{' '}
-                {copied && <span className="copyed">Copied!</span>}
+                {copied && <span className="copied">Copied!</span>}
             </div>
 
             <p className="link-info">
