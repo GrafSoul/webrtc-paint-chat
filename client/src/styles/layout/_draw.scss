@@ -1,0 +1,63 @@
+.draw-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 20px;
+}
+
+.main-title {
+    font-size: 2rem;
+    flex-grow: 0.2;
+}
+
+.canvas-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.color-button {
+    border: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+.color-button:focus,
+.color-button:active {
+    outline: none;
+}
+
+.color-button:hover {
+    background-color: white;
+    border: 1px solid black;
+}
+
+.color-button:active {
+    width: 30px;
+    height: 30px;
+}
+
+.size-value {
+    text-align: center;
+}
+
+.canvas-contain {
+    position: relative;
+    border: solid 2px black;
+    width: 950px;
+    height: 500px;
+}
+
+#canvas {
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+@media screen and (max-width: 600px) {
+    .canvas-row {
+        flex-direction: column;
+    }
+}

@@ -6,7 +6,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ExitButton from '../components/ExitButton';
 import Loader from '../components/Loader';
-import AudioPlayer from '../components/AudioPlayer';
+import DrawRoom from '../components/DrawRoom';
 import Settings from '../components/Settings';
 
 const Chat = ({ match, history }) => {
@@ -38,11 +38,7 @@ const Chat = ({ match, history }) => {
             {!open && <Settings startChat={startChat} />}
 
             {open && (
-                <AudioPlayer
-                    id={id}
-                    history={history}
-                    constraints={constraints}
-                />
+                <DrawRoom id={id} history={history} constraints={constraints} />
             )}
 
             {!spinner && (

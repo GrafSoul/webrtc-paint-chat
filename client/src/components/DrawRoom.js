@@ -5,12 +5,13 @@ import adapter from 'webrtc-adapter';
 
 import LinkRoom from './LinkRoom';
 import ChatRoom from './ChatRoom';
+import DrawBoard from './DrawBoard';
 import StreamControl from './StreamControl';
 import ExitButton from './ExitButton';
 import Loader from './Loader';
 import AudioMeter from './AudioMeter';
 
-const AudioPlayer = ({ id, history, constraints }) => {
+const DrawRoom = ({ id, history, constraints }) => {
     const [audio, setAudio] = useState(true);
     const [sound, setSound] = useState(false);
     const [isCopied, setIsCopied] = useState(false);
@@ -285,6 +286,8 @@ const AudioPlayer = ({ id, history, constraints }) => {
                 ></audio>
             </div>
 
+            <DrawBoard />
+
             <StreamControl
                 handleShareLink={handleShareLink}
                 handleShareChat={handleShareChat}
@@ -325,4 +328,4 @@ const AudioPlayer = ({ id, history, constraints }) => {
     );
 };
 
-export default AudioPlayer;
+export default DrawRoom;
