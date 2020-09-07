@@ -25,6 +25,7 @@ const io = socket(server); // Connected sockets to the server
 
 // Socket functionality
 const rooms = {};
+let board = [];
 
 io.on('connection', (socket) => {
     socket.on('join room', (id) => {
@@ -45,6 +46,17 @@ io.on('connection', (socket) => {
     socket.emit('your id', socket.id);
     socket.on('send message', (body) => {
         io.emit('message', body);
+    });
+
+    socket.on('draw', (data) => {
+        board.push(data);
+        io.emit('draw', data);
+    });
+
+    socket.on('erase board', (body) => {
+        console.log('Erasing Board');
+        board = [];
+        io.emit('erase board');
     });
 
     socket.on('offer', (payload) => {
