@@ -37,13 +37,15 @@ io.on('connection', (socket) => {
 
         const otherUser = rooms[id].find((id) => id !== socket.id);
 
-        if (otherUser) {
+        if (otherUser && rooms[id].length <= 1) {
             socket.emit('other user', otherUser);
             socket.to(otherUser).emit('user joined', socket.id);
+            socket.to(otherUser).emit('get canvas', board);
         }
     });
 
     socket.emit('your id', socket.id);
+
     socket.on('send message', (body) => {
         io.emit('message', body);
     });
@@ -54,7 +56,6 @@ io.on('connection', (socket) => {
     });
 
     socket.on('erase board', (body) => {
-        console.log('Erasing Board');
         board = [];
         io.emit('erase board');
     });
@@ -72,7 +73,7 @@ io.on('connection', (socket) => {
     });
 });
 
-// Started the server
+// Started the servery
 server.listen(port, () => {
     console.log(`**************************************`);
     console.log(`Server is running on port: ${port}`);

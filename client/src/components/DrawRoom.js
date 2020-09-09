@@ -5,7 +5,7 @@ import adapter from 'webrtc-adapter';
 
 import LinkRoom from './LinkRoom';
 import ChatRoom from './ChatRoom';
-import DrawBoard from './DrawBoard';
+import DrawChat from './DrawChat';
 import StreamControl from './StreamControl';
 import ExitButton from './ExitButton';
 import Loader from './Loader';
@@ -286,7 +286,7 @@ const DrawRoom = ({ id, history, constraints }) => {
                 ></audio>
             </div>
 
-            <DrawBoard />
+            <DrawChat yourID={yourID} />
 
             <StreamControl
                 handleShareLink={handleShareLink}
