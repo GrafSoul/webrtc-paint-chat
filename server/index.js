@@ -24,7 +24,11 @@ if (process.env.PROD) {
 const io = socket(server); // Connected sockets to the server
 
 // Socket functionality
-const rooms = {};
+const rooms = {
+    board: [],
+    messages: [],
+};
+
 let board = [];
 
 io.on('connection', (socket) => {
@@ -34,6 +38,8 @@ io.on('connection', (socket) => {
         } else {
             rooms[id] = [socket.id];
         }
+
+        io.emit('current user', socket.id);
 
         const otherUser = rooms[id].find((id) => id !== socket.id);
 

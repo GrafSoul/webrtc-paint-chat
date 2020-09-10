@@ -31,7 +31,10 @@ const DrawRoom = ({ id, history, constraints }) => {
     const socketRef = useRef();
     const otherUser = useRef();
     const userStream = useRef();
+    const currentUserId = useRef();
     const senders = useRef([]);
+
+    console.log(id);
 
     useEffect(() => {
         navigator.getUserMedia =
@@ -111,6 +114,10 @@ const DrawRoom = ({ id, history, constraints }) => {
                 otherUser.current = userID;
             });
 
+            socketRef.current.on('current user', (userID) => {
+                currentUserId.current = userID;
+            });
+
             socketRef.current.on('user joined', (userID) => {
                 otherUser.current = userID;
             });
@@ -127,6 +134,7 @@ const DrawRoom = ({ id, history, constraints }) => {
 
     useEffect(() => {
         socketRef.current = io.connect('/');
+
         socketRef.current.on('your id', (id) => {
             setYourID(id);
         });
@@ -144,6 +152,8 @@ const DrawRoom = ({ id, history, constraints }) => {
     function sendMessage(e) {
         e.preventDefault();
         const messageObject = {
+            room: id,
+            socket: currentUserId.current,
             body: message,
             id: yourID,
         };
