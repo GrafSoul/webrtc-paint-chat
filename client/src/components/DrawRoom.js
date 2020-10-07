@@ -122,6 +122,14 @@ const DrawRoom = ({ id, history, constraints }) => {
                 otherUser.current = userID;
             });
 
+            socketRef.current.on('your id', (id) => {
+                setYourID(id);
+            });
+
+            socketRef.current.on('message', (message) => {
+                receivedMessage(message);
+            });
+
             socketRef.current.on('offer', handleRecieveCall);
 
             socketRef.current.on('answer', handleAnswer);
@@ -131,18 +139,6 @@ const DrawRoom = ({ id, history, constraints }) => {
 
         setTimeout(() => setSpinner(true), 1000);
     }, [id, constraints]);
-
-    useEffect(() => {
-        socketRef.current = io.connect('/');
-
-        socketRef.current.on('your id', (id) => {
-            setYourID(id);
-        });
-
-        socketRef.current.on('message', (message) => {
-            receivedMessage(message);
-        });
-    }, []);
 
     function receivedMessage(message) {
         if (message.body !== '') setShareChat(true);

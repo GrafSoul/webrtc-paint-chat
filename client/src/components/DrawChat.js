@@ -21,8 +21,6 @@ const DrawChat = () => {
 
     const [color, setColor] = useState('black');
 
-    useEffect(() => {});
-
     useEffect(() => {
         let width = canvasContainRef.current.offsetWidth;
         let height = canvasContainRef.current.offsetHeight;

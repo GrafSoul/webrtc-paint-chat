@@ -42,6 +42,7 @@ io.on('connection', (socket) => {
         io.emit('current user', socket.id);
 
         const otherUser = rooms[id].find((id) => id !== socket.id);
+        console.log(otherUser);
 
         if (otherUser && rooms[id].length <= 1) {
             socket.emit('other user', otherUser);
@@ -53,7 +54,24 @@ io.on('connection', (socket) => {
     socket.emit('your id', socket.id);
 
     socket.on('send message', (body) => {
-        io.emit('message', body);
+        console.log('-----------------------------------');
+        console.log('body.room -', body.room);
+        console.log('body.socket -', body.socket);
+        console.log('body.body -', body.body);
+        console.log('body.id -', body.id);
+        console.log('-----------------------------------');
+        console.log('rooms -', rooms);
+        console.log('-----------------------------------');
+
+        let arr = rooms[body.room];
+        // let res = arr.find((item) => item === body.socket);
+
+        arr.map((socketID) => {
+            console.log(socketID);
+            socket.to(socketID).emit('message', body);
+        });
+
+        console.log(arr);
     });
 
     socket.on('draw', (data) => {
